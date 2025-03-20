@@ -8,7 +8,7 @@ if (isPresent == present) {
   console.log("Employee is not Present");
 }
 
-//calculating dailywage of an employee using a function
+//calculating daily wage of an employee with using a function
 let workingHours = Math.floor(Math.random() * 10) % 3;
 
 const isPartTime = 1;
@@ -45,7 +45,27 @@ for (let i = 1; i <= numberOfWorkingDays; i++) {
   empHrs += getWorkingHours(empCheck);
 }
 
-let emgWage = empHrs * wagePerHour;
+let empWage = empHrs * wagePerHour;
 console.log(
-  "Monthly Wage of the Employee for hours " + empHrs + " is " + emgWage
+  "Monthly Wage of the Employee for hours " + empHrs + " is " + empWage
+);
+
+//calculating Employee wage Untill hours are 160 or days completed are 20
+
+empHrs = 0;
+let numberOfTotalDays = 0;
+while (empHrs <= 160 && numberOfTotalDays < 20) {
+  empCheck = Math.floor(Math.random() * 10) % 3;
+  empHrs += getWorkingHours(empCheck);
+  numberOfTotalDays++;
+}
+empWage = empHrs * wagePerHour;
+
+console.log(
+  "Total working days are : " +
+    numberOfTotalDays +
+    ", Total working hours are : " +
+    empHrs +
+    ", Wage of Employee is : " +
+    empWage
 );
